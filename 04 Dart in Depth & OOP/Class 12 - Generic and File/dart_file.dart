@@ -132,3 +132,46 @@ void deleteFile() async {
     print('Error: $e');
   }
 }
+
+class FileModifier {
+  late File _file;
+
+  setFile(String path) {
+    _file = File(path);
+  }
+
+  readFile() {}
+
+  writeInFile() {}
+
+  appendInFIle() {}
+
+  seeInformation() {}
+
+  void fileCopy() async {
+    try {
+      await _file.copy('example_copy.txt');
+      print('File copied successfully.');
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+
+  void fileRename() async {
+    try {
+      await _file.rename('renamed_example.txt');
+      print('File renamed successfully.');
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+
+  void deleteFile() async {
+    try {
+      await _file.delete();
+      print('File deleted successfully.');
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+}
